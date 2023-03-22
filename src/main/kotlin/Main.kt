@@ -1,4 +1,4 @@
-import repository.interfaces.DemographicDataRepositoryImplementation
+import repository.impl.DemographicDataRepositoryImplementation
 
 
 fun main() {
