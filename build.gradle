@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation 'io.javalin:javalin:5.4.2'
+    implementation 'io.javalin:javalin-openapi:3.13.12'
     implementation 'org.jetbrains.kotlinx:dataframe:0.9.1'
 }
 
