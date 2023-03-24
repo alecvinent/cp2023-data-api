@@ -1,4 +1,4 @@
-package modules
+package infrastructure
 
 import services.DemographicDataService
 import services.impl.DemographicDataServiceImplementation

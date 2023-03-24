@@ -1,7 +1,6 @@
-package modules
+package infrastructure
 
 object ModuleLoader {
-
     fun loadModules(){
         val dbModule = DbModule.create()
         val serviceModule = ServiceModule.create(dbModule)

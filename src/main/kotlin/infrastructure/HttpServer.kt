@@ -1,10 +1,10 @@
-package modules
+package infrastructure
 
 import io.javalin.Javalin
 import io.javalin.apibuilder.ApiBuilder.get
 
 object HttpServer {
-    const val PORT = 8081
+    private const val PORT = 8081
 
     fun start(controllerModule: ControllerModule) {
         Javalin.create().routes {

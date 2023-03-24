@@ -1,7 +1,7 @@
 package repository.impl
 
-import extensions.getColumnPrefix
-import extensions.parseToDemographicData
+import repository.extensions.getColumnPrefix
+import repository.extensions.parseToDemographicData
 import model.Country
 import model.DataSet
 import model.DemographicData

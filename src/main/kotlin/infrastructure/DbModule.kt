@@ -1,10 +1,10 @@
-package modules
+package infrastructure
 
 import repository.DemographicDataRepository
 import repository.impl.DemographicDataRepositoryImplementation
 
 data class DbModule(
-        val demographicData: DemographicDataRepository
+    val demographicData: DemographicDataRepository
 ){
     companion object {
         fun create(): DbModule{

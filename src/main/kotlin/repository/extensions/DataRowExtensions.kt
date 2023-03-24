@@ -1,4 +1,4 @@
-package extensions
+package repository.extensions
 
 import model.DataSet
 import model.DemographicData

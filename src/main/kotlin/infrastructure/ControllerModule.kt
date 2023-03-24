@@ -1,9 +1,9 @@
-package modules
+package infrastructure
 
-import controller.DemographicDataController
+import rest.controller.DemographicDataController
 
 data class ControllerModule(
-        val demographicDataController: DemographicDataController
+    val demographicDataController: DemographicDataController
 ) {
     companion object{
         fun create(serviceModule: ServiceModule ): ControllerModule {

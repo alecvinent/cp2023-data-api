@@ -1,4 +1,4 @@
-import modules.ModuleLoader
+import infrastructure.ModuleLoader
 
 fun main() {
     ModuleLoader.loadModules()
