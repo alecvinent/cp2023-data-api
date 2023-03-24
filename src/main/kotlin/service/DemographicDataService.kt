@@ -1,4 +1,4 @@
-package services
+package service
 
 import model.CompositeIndices
 import model.CountryData

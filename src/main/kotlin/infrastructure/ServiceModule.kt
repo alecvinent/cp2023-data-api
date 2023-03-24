@@ -1,7 +1,7 @@
 package infrastructure
 
-import services.DemographicDataService
-import services.impl.DemographicDataServiceImplementation
+import service.DemographicDataService
+import service.impl.DemographicDataServiceImplementation
 
 data class ServiceModule(
         val demographicData: DemographicDataService

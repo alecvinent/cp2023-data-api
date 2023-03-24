@@ -1,11 +1,11 @@
-package services.impl
+package service.impl
 
 import model.CompositeIndices
 import model.Country
 import model.CountryData
 import model.DataSet
 import repository.DemographicDataRepository
-import services.DemographicDataService
+import service.DemographicDataService
 
 class DemographicDataServiceImplementation(private val csvRepository: DemographicDataRepository) : DemographicDataService {
     override fun getGiiInfo(): Map<String, CountryData> {

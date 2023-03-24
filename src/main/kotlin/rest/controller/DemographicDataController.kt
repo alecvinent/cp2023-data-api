@@ -2,7 +2,7 @@ package rest.controller
 
 import io.javalin.http.Context
 import rest.dto.toDto
-import services.DemographicDataService
+import service.DemographicDataService
 
 class DemographicDataController(
         private val demographicData: DemographicDataService
