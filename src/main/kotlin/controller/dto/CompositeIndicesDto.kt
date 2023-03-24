@@ -2,11 +2,10 @@ package controller.dto
 
 import model.CompositeIndices
 import model.CountryData
-import model.DemographicData
 
 data class CompositeIndicesDto(
-        val giiIndex: List<CountryData>,
-        val gdiIndex: List<CountryData>
+        val giiIndex: Map<String, CountryData>,
+        val gdiIndex: Map<String, CountryData>
 ) {
 
     fun toModel() = CompositeIndices(

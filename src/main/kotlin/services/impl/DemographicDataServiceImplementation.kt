@@ -8,7 +8,7 @@ import repository.DemographicDataRepository
 import services.DemographicDataService
 
 class DemographicDataServiceImplementation(private val csvRepository: DemographicDataRepository) : DemographicDataService {
-    override fun getGiiInfo(): List<CountryData> {
+    override fun getGiiInfo(): Map<String, CountryData> {
         val worldGiiInfo = csvRepository.getDemographicDataByDataSet(Country.WORLD, DataSet.GII)
         val latamGiiInfo = csvRepository.getDemographicDataByDataSet(Country.LATAM, DataSet.GII)
         val uruguayGiiInfo = csvRepository.getDemographicDataByDataSet(Country.URUGUAY, DataSet.GII)
@@ -17,10 +17,10 @@ class DemographicDataServiceImplementation(private val csvRepository: Demographi
         val latamCountryData = CountryData(Country.LATAM, latamGiiInfo)
         val uruguayCountryData = CountryData(Country.URUGUAY, uruguayGiiInfo)
 
-        return listOf(worldCountryData, latamCountryData, uruguayCountryData)
+        return mapOf( Pair("World", worldCountryData) , Pair("Latam", latamCountryData), Pair("Uruguay", uruguayCountryData))
     }
 
-    override fun getGdiInfo(): List<CountryData> {
+    override fun getGdiInfo(): Map<String, CountryData> {
         val worldGdiInfo = csvRepository.getDemographicDataByDataSet(Country.WORLD, DataSet.GDI)
         val latamGdiInfo = csvRepository.getDemographicDataByDataSet(Country.LATAM, DataSet.GDI)
         val uruguayGdiInfo = csvRepository.getDemographicDataByDataSet(Country.URUGUAY, DataSet.GDI)
@@ -29,7 +29,7 @@ class DemographicDataServiceImplementation(private val csvRepository: Demographi
         val latamCountryData = CountryData(Country.LATAM, latamGdiInfo)
         val uruguayCountryData = CountryData(Country.URUGUAY, uruguayGdiInfo)
 
-        return listOf(worldCountryData, latamCountryData, uruguayCountryData)
+        return mapOf( Pair("World", worldCountryData) , Pair("Latam", latamCountryData), Pair("Uruguay", uruguayCountryData))
     }
 
     override fun mergeCompositeIndices(): CompositeIndices = CompositeIndices(getGiiInfo(), getGdiInfo())

@@ -4,7 +4,7 @@ import model.CompositeIndices
 import model.CountryData
 
 interface DemographicDataService {
-    fun getGiiInfo(): List<CountryData>
-    fun getGdiInfo(): List<CountryData>
+    fun getGiiInfo(): Map<String,CountryData>
+    fun getGdiInfo(): Map<String, CountryData>
     fun mergeCompositeIndices(): CompositeIndices
 }

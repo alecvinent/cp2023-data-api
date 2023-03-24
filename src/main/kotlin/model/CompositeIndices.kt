@@ -3,8 +3,8 @@ package model
 import controller.dto.CompositeIndicesDto
 
 data class CompositeIndices(
-    val giiIndex: List<CountryData>,
-    val gdiIndex: List<CountryData>
+    val giiIndex: Map<String,CountryData>,
+    val gdiIndex: Map<String,CountryData>
 ){
     fun toDto(): CompositeIndicesDto = CompositeIndicesDto(giiIndex, gdiIndex)
 }
