@@ -8,7 +8,7 @@ import org.jetbrains.kotlinx.dataframe.api.columnNames
 fun <T> DataRow<T>.parseToDemographicData(dataSet: DataSet): List<DemographicData> {
     val allDemographicDataForDataSet = mutableListOf<DemographicData>()
 
-    for (i in 1..19){
+    for (i in 1..20){
         allDemographicDataForDataSet.add(
             DemographicData(
                 year = this.columnNames()[i].removePrefix(dataSet.getColumnPrefix()).toInt(),
