@@ -1,4 +1,4 @@
-# cp2023-data-api
+# Workshop - Are you ready for Kotlin?
 En las 5 capetas superiores encontraran ejemplos prácticosdel uso de Kolin.
 
 01. En esta carpeta encontraremos los archivos nuestra primera práctica
