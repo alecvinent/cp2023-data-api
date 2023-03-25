@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Visualization
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row *ngFor="let data of dataAccessService.chartData$ | async">
+      <ion-col>
+        <ion-card #observedCard intersectionObserver>
+          <ion-card-header>
+            <ion-card-title>{{data.chartTitle}}</ion-card-title>
+<!--            <ion-card-subtitle>SubTitle</ion-card-subtitle>-->
+          </ion-card-header>
+
+          <ion-card-content>
+            <highcharts-chart
+              class="chart-container"
+              [Highcharts]="Highcharts"
+              [options]="data.chartOptions"
+              (chartInstance)="updateChart($event)"
+            ></highcharts-chart>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
