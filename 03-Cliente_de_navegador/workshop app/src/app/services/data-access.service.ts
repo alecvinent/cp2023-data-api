@@ -12,7 +12,7 @@ export class DataAccessService {
   chartData$: Observable<{ chartTitle: string; chartOptions: Partial<Highcharts.Options> }[]> =
     this.httpClient.get<{ [key: string]: { [key: string]: { data: { year: number; value: number }[]}}}>(`${environment.apiUrl}/v1/demographicData`)
     .pipe(
-      map((data:  { [key: string]: { [key: string]: { data: { year: number; value: number }[] }}}) => {
+      map((data: { [key: string]: { [key: string]: { data: { year: number; value: number }[] }}}) => {
         const dataSeries: any = {};
         Object.keys(data).forEach((key) => {
 
