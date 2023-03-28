@@ -19,16 +19,19 @@ export class Tab1Page{
   updateChart(chart: Highcharts.Chart) {
     this.chart.push(chart);
   }
+
   ngAfterViewInit() {
-    this.observedCard.intersection
-      .pipe(
-        takeUntil(this.destroy$)
-      )
-      .subscribe((entry) => {
-        if (entry.intersect) {
-          this.chart?.forEach(chart => chart.reflow());
-        }
+    if (this.observedCard){
+      this.observedCard.intersection
+        .pipe(
+          takeUntil(this.destroy$)
+        )
+        .subscribe((entry) => {
+          if (entry.intersect) {
+            this.chart?.forEach(chart => chart.reflow());
+          }
       });
+    }
   }
 
   ngOnDestroy(): void {
