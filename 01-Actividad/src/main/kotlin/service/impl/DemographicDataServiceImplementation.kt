@@ -41,5 +41,5 @@ class DemographicDataServiceImplementation(private val csvRepository: Demographi
 
     // Ejercicio 3 - Convertir la funcion mergeCompositeIndicesWithReturn a otra que
     // funcione exactamente igual pero utilizando una sola linea de codigo!
-    // override fun mergeCompositeIndeces(): CompositeIndices = TODO()
+    // override fun mergeCompositeIndices(): CompositeIndices = TODO()
 }
