@@ -11,4 +11,11 @@ class DemographicDataController(
         val demographicDataRetrieved = demographicData.mergeCompositeIndices()
         ctx.json(demographicDataRetrieved.toDto())
     }
+
+    fun getDemographicDataWithCoroutine(ctx: Context) {
+        runBlocking {
+            val demographicDataRetrieved = demographicData.mergeCompositeIndicesWithCoroutines()
+            ctx.json(demographicDataRetrieved.toDto())
+        }
+    }
 }
