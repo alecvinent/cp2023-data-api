@@ -1,7 +1,8 @@
-package rest.controller
+package api.controller
 
 import io.javalin.http.Context
-import rest.dto.toDto
+import api.dto.toDto
+import kotlinx.coroutines.runBlocking
 import service.DemographicDataService
 
 class DemographicDataController(
