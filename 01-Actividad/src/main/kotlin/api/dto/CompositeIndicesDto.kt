@@ -1,4 +1,4 @@
-package rest.dto
+package api.dto
 
 import model.CompositeIndices
 import model.CountryData
