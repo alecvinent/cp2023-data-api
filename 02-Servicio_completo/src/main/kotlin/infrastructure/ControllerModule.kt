@@ -1,6 +1,6 @@
 package infrastructure
 
-import rest.controller.DemographicDataController
+import api.controller.DemographicDataController
 
 data class ControllerModule(
     val demographicDataController: DemographicDataController
