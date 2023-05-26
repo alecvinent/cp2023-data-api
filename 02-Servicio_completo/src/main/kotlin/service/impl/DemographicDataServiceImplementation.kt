@@ -1,14 +1,12 @@
 package service.impl
 
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.*
 import model.CompositeIndices
 import model.Country
 import model.CountryData
 import model.DataSet
 import repository.DemographicDataRepository
 import service.DemographicDataService
-import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
 
 class DemographicDataServiceImplementation(private val csvRepository: DemographicDataRepository) : DemographicDataService {
     override fun getGiiInfo(): Map<String, CountryData> {
@@ -37,14 +35,16 @@ class DemographicDataServiceImplementation(private val csvRepository: Demographi
 
     override fun mergeCompositeIndices(): CompositeIndices = CompositeIndices(getGiiInfo(), getGdiInfo())
 
-
     override suspend fun mergeCompositeIndicesWithCoroutines(): CompositeIndices {
 
-        val giiIndex = GlobalScope.async {
+        val job = SupervisorJob()
+        val scope = CoroutineScope(Dispatchers.Default + job)
+
+        val giiIndex = scope.async {
             getGiiInfo()
         }
 
-        val gdiIndex = GlobalScope.async {
+        val gdiIndex = scope.async {
             getGdiInfo()
         }
 
