@@ -15,7 +15,8 @@ class DemographicDataServiceImplementation(private val csvRepository: Demographi
          */
 
         val worldGiiInfo = csvRepository.getDemographicDataByDataSet(Country.WORLD, DataSet.GII)
-        val latamGiiInfo = TODO()
+        val worldGiiInfo = csvRepository.getDemographicDataByDataSet(Country.WORLD, DataSet.GII)
+        val latamGiiInfo = csvRepository.getDemographicDataByDataSet()
         val uruguayGiiInfo = TODO()
 
         val worldCountryData = CountryData(Country.WORLD, worldGiiInfo)
@@ -33,13 +34,29 @@ class DemographicDataServiceImplementation(private val csvRepository: Demographi
         TODO()
     }
 
+
+    // Ejercicio 3 - Convertir la funcion mergeCompositeIndicesWithReturn a otra que
+    // funcione exactamente igual pero utilizando una sola linea de codigo!
+    // override fun mergeCompositeIndeces(): CompositeIndices = TODO()
+
     fun mergeCompositeIndicesWithReturn(): CompositeIndices {
         val giiInfo = getGiiInfo()
         val gdiInfo = getGdiInfo()
         return CompositeIndices(giiIndex = giiInfo, gdiIndex = gdiInfo)
     }
 
-    // Ejercicio 3 - Convertir la funcion mergeCompositeIndicesWithReturn a otra que
-    // funcione exactamente igual pero utilizando una sola linea de codigo!
-    // override fun mergeCompositeIndeces(): CompositeIndices = TODO()
+    //Una vez resuelto el ejercicio 3, intenta obtener los datos de los indices desde tu navegador apartir de la siguiente
+    // url: http://localhost:8081/v1/demographicData
+
+
+
+    // Ejercicio 4 [OPCIONAL] - Apartir de las funciones implementadas anteriormente (getGiiInfo() getGdiInfo())
+    // ahora implementemos una funcion que retorne al igual que el ejercicio 3, un CompositeIndices pero ahora
+    // utilizando corrutinas
+    override suspend fun mergeCompositeIndicesWithCoroutines(): CompositeIndices {
+        TODO()
+    }
+
+    //Una vez resuelto el ejercicio 4, intenta obtener los datos de los indices desde tu navegador apartir de la siguiente
+    // url: http://localhost:8081/v1/demographicData/coroutine
 }

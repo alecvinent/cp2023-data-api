@@ -15,6 +15,7 @@ object HttpServer {
     private fun routes(controllerModule: ControllerModule) {
         with(controllerModule){
             get("/v1/demographicData") { ctx -> demographicDataController.getDemographicData(ctx) }
+            get("/v1/demographicData/coroutine") { ctx -> demographicDataController.getDemographicDataWithCoroutine(ctx) }
         }
     }
 }

@@ -1,5 +1,6 @@
 package service.impl
 
+import kotlinx.coroutines.*
 import model.CompositeIndices
 import model.Country
 import model.CountryData
@@ -33,4 +34,20 @@ class DemographicDataServiceImplementation(private val csvRepository: Demographi
     }
 
     override fun mergeCompositeIndices(): CompositeIndices = CompositeIndices(getGiiInfo(), getGdiInfo())
+
+    override suspend fun mergeCompositeIndicesWithCoroutines(): CompositeIndices {
+
+        val job = SupervisorJob()
+        val scope = CoroutineScope(Dispatchers.Default + job)
+
+        val giiIndex = scope.async {
+            getGiiInfo()
+        }
+
+        val gdiIndex = scope.async {
+            getGdiInfo()
+        }
+
+        return CompositeIndices(giiIndex.await(), gdiIndex.await())
+    }
 }
