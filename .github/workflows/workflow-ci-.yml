@@ -38,6 +38,7 @@ jobs:
           cache: 'npm'
       - name: npm install and test
         run: |
+          cd "03-Cliente_de_navegador/workshop app"
           npm ci
           npm install
           npm test
