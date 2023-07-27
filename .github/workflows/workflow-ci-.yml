@@ -36,7 +36,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          working-directory: "./03-Cliente_de_navegador/workshop app"
       - name: npm install and test
         working-directory: "./03-Cliente_de_navegador/workshop app"
         run: |
