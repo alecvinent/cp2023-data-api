@@ -21,7 +21,6 @@ jobs:
       - name: npm install and build webpack     
         run: |
           npm ci
-          npm audit fix --force
           npm install
           npm run build --if-present
 
@@ -43,7 +42,6 @@ jobs:
           cache-dependency-path: "./03-Cliente_de_navegador/workshop app/package-lock.json"
       - name: npm install and test
         run: |
-          npm audit fix --force
           npm install
           npm test
         env:
