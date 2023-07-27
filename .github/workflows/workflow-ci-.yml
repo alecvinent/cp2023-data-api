@@ -38,6 +38,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          cache-dependency-path: "./03-Cliente_de_navegador/workshop app/package-lock.json"
       - name: npm install and test
         run: |
           npm ci
