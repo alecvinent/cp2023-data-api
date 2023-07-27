@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: npm install and build webpack
+        working-directory: "03-Cliente_de_navegador/workshop app"
         run: |
-          cd "03-Cliente_de_navegador/workshop app"
           npm ci
           npm install
           npm run build --if-present
@@ -37,8 +37,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: npm install and test
+        working-directory: "03-Cliente_de_navegador/workshop app"
         run: |
-          cd "03-Cliente_de_navegador/workshop app"
           npm ci
           npm install
           npm test
