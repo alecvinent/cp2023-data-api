@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: npm install and build webpack
         run: |
-          cd 03-Cliente_de_navegador/workshop%20app
+          cd "03-Cliente_de_navegador/workshop app"
           npm ci
           npm install
           npm run build --if-present
